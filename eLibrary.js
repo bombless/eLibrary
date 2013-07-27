@@ -15,8 +15,10 @@ Function.prototype.e = function(){
 					_value = obj[_name];
 					e.style[_name] = _value;
 				}
+				return ret;
 			}
 			e.style[name] = value;
+			return ret;
 		}
 		function setHoverLayer(color, opacity){
 			var t = e.parentNode;
