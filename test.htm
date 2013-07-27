@@ -1,0 +1,224 @@
+<!DOCTYPE html >
+<html>
+<body>
+<ol>
+<li>one</li><li>two</li><li>three</li></ol>
+<script type="text/javascript" src="eLibrary.js"></script>
+<script type="text/javascript">
+(function(e){
+  var liList = document.getElementsByTagName('li');
+	var i, j, hList;
+	for(i = 0; i < liList.length; ++i){
+		e(liList[i]).setHoverLayer('blue', .5).setTip('');
+	}
+	for(i = 1; i <= 6; ++i){
+		hList = document.getElementsByTagName('h' + i);
+		for(j = 0; j < hList.length; ++j){
+			e(hList[j]).setHoverLayer('red', .5).setTip('');
+		}
+	}
+}).e();
+</script>
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						
+						<h1 id="firstHeading" class="firstHeading" lang="ja"><span dir="auto">JavaScript/Math/random</span></h1>
+			<div id="bodyContent">
+								<div id="siteSub">出典: フリー教科書『ウィキブックス（Wikibooks）』</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a>&lrm; | <a href="/wiki/JavaScript/Math" title="JavaScript/Math">Math</a></span></div>
+																<div id="jump-to-nav" class="mw-jump">
+					移動:					<a href="#mw-navigation">案内</a>、					<a href="#p-search">検索</a>
+				</div>
+								<div id="mw-content-text" lang="ja" dir="ltr" class="mw-content-ltr"><p><b>Math.random</b>は<code>0.33827408612705767</code>のような0以上1未満の擬似乱数を発生させます。このメソッドはECMA-262標準に含まれており、JavaScript 1.0でUNIX系プラットフォームに実装され、JavaScript 1.1ですべてのプラットフォームに実装されました。</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>目次</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E6.A7.8B.E6.96.87"><span class="tocnumber">1</span> <span class="toctext">構文</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E8.A7.A3.E8.AA.AC"><span class="tocnumber">2</span> <span class="toctext">解説</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E4.BE.8B"><span class="tocnumber">3</span> <span class="toctext">例</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E9.96.A2.E9.80.A3.E9.A0.85.E7.9B.AE"><span class="tocnumber">4</span> <span class="toctext">関連項目</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id=".E6.A7.8B.E6.96.87">構文</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span>a href="/w/index.php?title=JavaScript/Math/random&amp;action=edit&amp;section=1" title="節を編集: 構文">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+<span class="kw1">var</span> randomNumber <span class="sy0">=</span> <span class="kw4">Math</span>.<span class="me1">random</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id=".E8.A7.A3.E8.AA.AC">解説</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=JavaScript/Math/random&amp;action=edit&amp;section=2" title="節を編集: 解説">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><code>Math.random()</code>は内部的に現在の時刻<code>(new <a href="/wiki/JavaScript/Date" title="JavaScript/Date">Date</a>).<a href="/w/index.php?title=JavaScript/Date/prototype/getTime&amp;action=edit&amp;redlink=1" class="new" title="JavaScript/Date/prototype/getTime (存在しないページ)">getTime</a>()</code>をシードとして初期化されます。<code><a href="/w/index.php?title=JavaScript/Math/floor&amp;action=edit&amp;redlink=1" class="new" title="JavaScript/Math/floor (存在しないページ)">Math.floor</a>()</code>と組み合わせて使用することにより、整数の擬似乱数を取得することができます。</p>
+<h2><span class="mw-headline" id=".E4.BE.8B">例</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=JavaScript/Math/random&amp;action=edit&amp;section=3" title="節を編集: 例">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>0以上10未満のランダムな整数を表示します。</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+<span class="kw1">var</span> randomNumber <span class="sy0">=</span> <span class="kw4">Math</span>.<span class="me1">floor</span><span class="br0">(</span> <span class="kw4">Math</span>.<span class="me1">random</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">*</span> <span class="nu0">10</span> <span class="br0">)</span><span class="sy0">;</span>
+alert<span class="br0">(</span>randomNumber<span class="br0">)</span><span class="sy0">;</span>
+</pre></div>
+</div>
+<p>5以上10未満のランダムな整数を表示します。</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+<span class="kw1">var</span> randomNumber <span class="sy0">=</span> <span class="kw4">Math</span>.<span class="me1">floor</span><span class="br0">(</span> <span class="kw4">Math</span>.<span class="me1">random</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">*</span> <span class="br0">(</span><span class="nu0">10</span> <span class="sy0">-</span> <span class="nu0">5</span><span class="br0">)</span> <span class="sy0">+</span> <span class="nu0">5</span> <span class="br0">)</span><span class="sy0">;</span>
+alert<span class="br0">(</span>randomNumber<span class="br0">)</span><span class="sy0">;</span>
+</pre></div>
+</div>
+<p>配列からランダムな要素を取り出します。</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+<span class="kw1">var</span> array <span class="sy0">=</span> <span class="st0">"A B C D E"</span>.<span class="me1">split</span><span class="br0">(</span><span class="st0">" "</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// ["A", "B", "C", "D", "E"]</span>
+<span class="kw1">var</span> index <span class="sy0">=</span> <span class="kw4">Math</span>.<span class="me1">floor</span><span class="br0">(</span> <span class="kw4">Math</span>.<span class="me1">random</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">*</span> array.<span class="me1">length</span> <span class="br0">)</span><span class="sy0">;</span>
+alert<span class="br0">(</span> array<span class="br0">[</span>index<span class="br0">]</span> <span class="br0">)</span><span class="sy0">;</span>
+</pre></div>
+</div>
+<p>JavaScriptの<a href="/wiki/JavaScript/Array" title="JavaScript/Array">配列</a>は<code>array[2.3116713552735746]</code>のような浮動小数点数の添え字を<code>array[2]</code>のような整数の添え字に自動的には変換<b>しない</b>ため、必ず上記の例のように<code>Math.floor()</code>を適用して整数の添え字に変換してから渡さなければなりません。</p>
+<h2><span class="mw-headline" id=".E9.96.A2.E9.80.A3.E9.A0.85.E7.9B.AE">関連項目</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=JavaScript/Math/random&amp;action=edit&amp;section=4" title="節を編集: 関連項目">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="/w/index.php?title=JavaScript/Math/floor&amp;action=edit&amp;redlink=1" class="new" title="JavaScript/Math/floor (存在しないページ)">Math.floor</a></li>
+<li><a href="/w/index.php?title=JavaScript/Math/ceil&amp;action=edit&amp;redlink=1" class="new" title="JavaScript/Math/ceil (存在しないページ)">Math.ceil</a></li>
+<li><a href="/w/index.php?title=JavaScript/Math/round&amp;action=edit&amp;redlink=1" class="new" title="JavaScript/Math/round (存在しないページ)">Math.round</a></li>
+</ul>
+<div style="border:solid #999 1px; background:#F8F8F8; padding:0.5em; margin:1em auto 1em auto; width:85%; text-align:left;">このページ「<b>JavaScript/Math/random</b>」は、<b><a href="/wiki/Wikibooks:%E3%82%B9%E3%82%BF%E3%83%96" title="Wikibooks:スタブ">書きかけ</a></b>です。加筆?訂正など、協力いただける皆様の<a class="external text" href="//ja.wikibooks.org/w/index.php?title=JavaScript/Math/random&amp;action=edit">編集</a>を心からお待ちしております。また、ご意見などがありましたら、お気軽に<a href="/w/index.php?title=%E3%83%88%E3%83%BC%E3%82%AF:JavaScript/Math/random&amp;action=edit&amp;redlink=1" class="new" title="トーク:JavaScript/Math/random (存在しないページ)">ノート</a>へどうぞ。</div>
+
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 68/1000000
+Preprocessor generated node count: 191/1500000
+Post‐expand include size: 816/2048000 bytes
+Template argument size: 0/2048000 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key jawikibooks:pcache:idhash:14374-0!*!0!!ja!*!* and timestamp 20130702134330 -->
+</div>								<div class="printfooter">
+				"<a href="http://ja.wikibooks.org/w/index.php?title=JavaScript/Math/random&amp;oldid=59037">http://ja.wikibooks.org/w/index.php?title=JavaScript/Math/random&amp;oldid=59037</a>" より作成				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/%E7%89%B9%E5%88%A5:%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA" title="特別:カテゴリ">カテゴリ</a>: <ul><li><a href="/wiki/%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA:JavaScript" title="カテゴリ:JavaScript">JavaScript</a></li><li><a href="/wiki/%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA:%E3%82%B9%E3%82%BF%E3%83%96" title="カテゴリ:スタブ">スタブ</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>案内メニュー</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="">
+	<h3>個人用ツール</h3>
+	<ul>
+<li id="pt-createaccount"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3&amp;returnto=JavaScript%2FMath%2Frandom&amp;type=signup">新規アカウント作成</a></li><li id="pt-login"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3&amp;returnto=JavaScript%2FMath%2Frandom" title="ログインすることを推奨します。ただし、必須ではありません。 [o]" accesskey="o">ログイン</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs">
+	<h3>名前空間</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/JavaScript/Math/random"  title="本文を閲覧 [c]" accesskey="c">本文</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="/w/index.php?title=%E3%83%88%E3%83%BC%E3%82%AF:JavaScript/Math/random&amp;action=edit&amp;redlink=1"  title="本文ページについての議論 [t]" accesskey="t">議論</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3><span>変種</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs">
+	<h3>表示</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="/wiki/JavaScript/Math/random" >閲覧</a></span></li>
+					<li id="ca-edit"><span><a href="/w/index.php?title=JavaScript/Math/random&amp;action=edit"  title="このページを編集できます。保存前にプレビューボタンを使用してください。 [e]" accesskey="e">編集</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=JavaScript/Math/random&amp;action=history"  title="このページの過去の版 [h]" accesskey="h">履歴表示</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet">
+	<h3><span>操作</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					
+				<div class="portal" role="navigation" id='p-navigation'>
+	<h3>ナビゲーション</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage"><a href="/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8" title="メインページに移動する [z]" accesskey="z">メインページ</a></li>
+			<li id="n-portal"><a href="/wiki/Wikibooks:%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3%E3%83%BB%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB" title="このプロジェクトについて、できること、情報を入手する場所">コミュニティ?ポータル</a></li>
+			<li id="n-villagepump"><a href="/wiki/Wikibooks:%E8%AB%87%E8%A9%B1%E5%AE%A4">談話室</a></li>
+			<li id="n-recentchanges"><a href="/wiki/%E7%89%B9%E5%88%A5:%E6%9C%80%E8%BF%91%E3%81%AE%E6%9B%B4%E6%96%B0" title="このウィキにおける最近の更新の一覧 [r]" accesskey="r">最近の更新</a></li>
+			<li id="n-randompage"><a href="/wiki/%E7%89%B9%E5%88%A5:%E3%81%8A%E3%81%BE%E3%81%8B%E3%81%9B%E8%A1%A8%E7%A4%BA" title="無作為に選択されたページを読み込む [x]" accesskey="x">おまかせ表示</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-help'>
+	<h3>ヘルプ</h3>
+	<div class="body">
+		<ul>
+			<li id="n-help"><a href="/wiki/%E3%83%98%E3%83%AB%E3%83%97:%E7%9B%AE%E6%AC%A1" title="情報を得る場所">ヘルプ</a></li>
+			<li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_ja.wikibooks.org&amp;uselang=ja" title="ご支援ください">寄付</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-coll-print_export'>
+	<h3>印刷/書き出し</h3>
+	<div class="body">
+		<ul>
+			<li id="coll-create_a_book"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E3%83%96%E3%83%83%E3%82%AF&amp;bookcmd=book_creator&amp;referer=JavaScript%2FMath%2Frandom">ブックの新規作成</a></li>
+			<li id="coll-download-as-rl"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E3%83%96%E3%83%83%E3%82%AF&amp;bookcmd=render_article&amp;arttitle=JavaScript%2FMath%2Frandom&amp;oldid=59037&amp;writer=rl">PDF 形式でダウンロード</a></li>
+			<li id="t-print"><a href="/w/index.php?title=JavaScript/Math/random&amp;printable=yes" title="このページの印刷用ページ [p]" accesskey="p">印刷用バージョン</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb'>
+	<h3>ツールボックス</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="/wiki/%E7%89%B9%E5%88%A5:%E3%83%AA%E3%83%B3%E3%82%AF%E5%85%83/JavaScript/Math/random" title="ここにリンクしている全ウィキページの一覧 [j]" accesskey="j">リンク元</a></li>
+			<li id="t-recentchangeslinked"><a href="/wiki/%E7%89%B9%E5%88%A5:%E9%96%A2%E9%80%A3%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E6%9B%B4%E6%96%B0%E7%8A%B6%E6%B3%81/JavaScript/Math/random" title="このページからリンクしているページの最近の更新 [k]" accesskey="k">関連ページの更新状況</a></li>
+			<li id="t-specialpages"><a href="/wiki/%E7%89%B9%E5%88%A5:%E7%89%B9%E5%88%A5%E3%83%9A%E3%83%BC%E3%82%B8%E4%B8%80%E8%A6%A7" title="特別ページの一覧 [q]" accesskey="q">特別ページ</a></li>
+			<li id="t-permalink"><a href="/w/index.php?title=JavaScript/Math/random&amp;oldid=59037" title="このページのこの版への固定リンク">この版への固定リンク</a></li>
+			<li id="t-info"><a href="/w/index.php?title=JavaScript/Math/random&amp;action=info">ページ情報</a></li>
+<li id="t-cite"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E5%BC%95%E7%94%A8&amp;page=JavaScript%2FMath%2Frandom&amp;id=59037" title="このページの引用方法">このページを引用</a></li>		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-lang'>
+	<h3>他の言語</h3>
+	<div class="body">
+		<ul>
+			<li class="uls-p-lang-dummy"><a href="#"></a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> このページの最終更新日時は 2010年6月1日 (火) 06:15 です。</li>
+											<li id="footer-info-copyright">テキストは<a href="//creativecommons.org/licenses/by-sa/3.0/deed.ja">クリエイティブ?コモンズ 表示-継承ライセンス</a>のもとで利用できます。追加の条件が適用される場合があります。詳細は<a href="//wikimediafoundation.org/wiki/%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84">利用規約</a>を参照してください。</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC" title="wikimedia:プライバシー?ポリシー">プライバシー?ポリシー</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikibooks:%E3%82%A6%E3%82%A3%E3%82%AD%E3%83%96%E3%83%83%E3%82%AF%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" title="Wikibooks:ウィキブックスについて">ウィキブックスについて</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikibooks:%E5%85%8D%E8%B2%AC%E4%BA%8B%E9%A0%85" title="Wikibooks:免責事項">免責事項</a></li>
+											<li id="footer-places-mobileview"><a href="//ja.m.wikibooks.org/wiki/JavaScript/Math/random" class="noprint stopMobileRedirectToggle">モバイルビュー</a></li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+</body></html>
