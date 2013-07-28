@@ -9,12 +9,14 @@
   var liList = document.getElementsByTagName('li');
 	var i, j, hList;
 	for(i = 0; i < liList.length; ++i){
-		e(liList[i]).setHoverLayer('blue', .5).setTip('');
+	//use eLibrary as a tool set, which cost only a little
+		e.setHoverLayer(liList[i], 'blue', .5);
 	}
 	for(i = 1; i <= 6; ++i){
 		hList = document.getElementsByTagName('h' + i);
 		for(j = 0; j < hList.length; ++j){
-			e(hList[j]).setHoverLayer('red', .5).setTip('');
+		//use eLibrary as a element wrapper, which support method chaining
+			e(hList[j]).setHoverLayer('red', .5).setTip('a method chaning');
 		}
 	}
 }).e();
